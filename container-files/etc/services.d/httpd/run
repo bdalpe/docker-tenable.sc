@@ -1,0 +1,2 @@
+#!/usr/bin/with-contenv bash
+source /opt/sc/.scenv && exec $SC_ROOT/support/bin/httpd -k start -DFOREGROUND

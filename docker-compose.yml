@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  tenablesc:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tenable-sc
+    hostname: tenable-sc
+    volumes:
+      - sc:/opt/sc
+    ports:
+      - "8443:443"
+      
+  nessus:
+    image: stevemcgrath/nessus_scanner:latest
+    container_name: nessus-scanner
+    hostname: nessus-scanner
+    volumes:
+      - nessus:/opt/nessus/var/nessus
+    environment:
+      - SECURITYCENTER=True
+      - ADMIN_USER=admin
+      - ADMIN_PASS=Sup3rS3cret!
+    
+volumes:
+  sc:
+  nessus:

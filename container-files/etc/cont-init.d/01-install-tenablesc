@@ -1,0 +1,12 @@
+#!/usr/bin/with-contenv bash
+FILE="/opt/sc/.install"
+
+if [[ ! -f $FILE ]] || [[ -n "$INSTALL" ]]; then
+	echo "Installing Tenable Security Center $SC_VER!"
+	yum install -y SecurityCenter-$SC_VER
+	
+	echo $SC_VER > $FILE
+else
+	echo "Tenable Security Center is already installed."
+	echo "Version: $SC_VER"
+fi

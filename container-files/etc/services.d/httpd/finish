@@ -1,0 +1,2 @@
+#!/usr/bin/execlineb -P
+rm -f /opt/sc/support/logs/httpd.pid

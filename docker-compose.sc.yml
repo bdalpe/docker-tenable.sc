@@ -1,0 +1,17 @@
+version: '3'
+
+services: 
+  tenablesc:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tenable-sc
+    hostname: tenable-sc
+    volumes:
+      - sc:/opt/sc
+    ports:
+      - "8443:443"
+      
+volumes:
+  sc:
+  nessus:
