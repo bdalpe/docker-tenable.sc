@@ -1,0 +1,22 @@
+name: Dockerfile Build
+
+on: 
+  push:
+    branches:
+     - master
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build container image
+      run: |
+        docker-compose -f docker-compose.sc.yml build
+        
+    - name: Test Tenable.sc installation
+      run: |
+        docker-compose -f docker-compose.sc.yml run --rm tenablesc /etc/cont-init.d/01-install-tenablesc
