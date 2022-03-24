@@ -2,7 +2,7 @@ FROM centos:7
 
 VOLUME /opt/sc
 
-ENV SC_VER=5.17.0-el7
+ENV SC_VER=5.20.1-el7
 ARG S6_OVERLAY_VERSION=2.2.0.1
 
 WORKDIR /tmp
