@@ -2,6 +2,7 @@
 name=Tenable-$releasever - Platform
 baseurl=https://appliance.cloud.tenable.com/repos/$releasever/tenable/platform/$basearch
 gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-Tenable
 mdpolicy=group:all
 skip_if_unavailable=1
 
@@ -9,5 +10,6 @@ skip_if_unavailable=1
 name=Tenable-$releasever - Applications
 baseurl=https://appliance.cloud.tenable.com/repos/$releasever/tenable/applications/$basearch
 gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-Tenable
 mdpolicy=group:all
 skip_if_unavailable=1
