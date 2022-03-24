@@ -9,7 +9,8 @@ WORKDIR /tmp
 
 COPY Tenable.repo /etc/yum.repos.d/Tenable.repo
 
-RUN yum -y update \
+RUN sed -i.backup 's/^enabled=1/enabled=0/' /etc/yum/pluginconf.d/fastestmirror.conf \
+ && yum -y update \
  && rpm --import https://static.tenable.com/marketing/RPM-GPG-KEY-Tenable \
  && yum install -y wget java-1.8.0-openjdk xz-utils \
  && yum -y clean all
