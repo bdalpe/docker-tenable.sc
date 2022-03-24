@@ -27,7 +27,7 @@ To upgrade the container, add the following flags to the `docker-compose.yml` fi
 
 	environment:
 	 - INSTALL=yes
-	 - SC_VER=5.17.0-el7
+	 - SC_VER=5.20.1-el7
 
 The `SC_VER` environment variable should match the package versions listed here: [https://www.tenable.com/downloads/tenable-sc](https://www.tenable.com/downloads/tenable-sc).
 
