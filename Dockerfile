@@ -9,7 +9,7 @@ WORKDIR /tmp
 
 RUN rpm --import https://static.tenable.com/marketing/RPM-GPG-KEY-Tenable
 
-COPY yum.repo /etc/yum.repos.d/Tenable.repo
+COPY Tenable.repo /etc/yum.repos.d/Tenable.repo
 
 RUN yum -y update \
  && yum install -y wget java-1.8.0-openjdk \
